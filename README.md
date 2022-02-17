@@ -4,9 +4,9 @@
 ## Install 
 
 
-### Install Node and NPM
+### Install Node and yarn
 
-Install Node and NPM from https://nodejs.org/
+Install Node and yarn、 from https://nodejs.org/
 
 Confirm:
 
@@ -20,25 +20,12 @@ Output example:
 v16.10.0
 ```
 
-Confirm:
-
-```
-npm -v
-```
-
-Output example:
-
-```sh
-7.24.1
-```
-
-
 ### Install Selenium
 
 Install Selenium WebDriver:
 
 ```sh
-npm install --save selenium-webdriver
+yarn add --save selenium-webdriver
 ```
 
 
@@ -47,7 +34,7 @@ npm install --save selenium-webdriver
 Install Google chromedriver:
 
 ```sh
-npm install --save chromedriver
+yarn add --save chromedriver
 ```
 
 
@@ -99,11 +86,3 @@ To update your Chrome webdriver:
 * Download the version that matches your Chrome browser app.
 
 
-## Tracking
-
-  * Package: demo-selenium-javasript
-  * Version: 1.1.0
-  * Created: 2019-11-02T00:00:00Z
-  * Updated: 2021-10-01T13:05:10Z
-  * License: GPL-2.0-or-greater or for custom license contact us
-  * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)

@@ -1,18 +1,7 @@
 #!/usr/bin/env node
 
 ///
-// Demo of Selenium browser automation with JavaScript
-// Please see the file README.md for more information.
-//
-// ## Tracking
-//
-//   * Package: demo-selenium-javasript
-//   * Version: 1.1.0
-//   * Created: 2019-11-02T00:00:00Z
-//   * Updated: 2021-10-01T13:05:10Z
-//   * License: GPL-2.0-or-greater or for custom license contact us
-//   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
-///
+// 打开浏览器，并在google上搜索杭州西湖
 
 // Initialize Selenium Webdriver, which is the manager
 const {By,Key,Builder} = require("selenium-webdriver");
@@ -29,7 +18,7 @@ async function demo(){
     await driver.get("https://google.com");
             
     // Search
-    await driver.findElement(By.name("q")).sendKeys("涂鸦智能",Key.RETURN);
+    await driver.findElement(By.name("q")).sendKeys("杭州西湖",Key.RETURN);
  
     // Output
     var title = await driver.getTitle();
