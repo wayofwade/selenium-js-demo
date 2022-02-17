@@ -85,4 +85,22 @@ To update your Chrome webdriver:
 
 * Download the version that matches your Chrome browser app.
 
+### 如何控制打开已有浏览器
+* 添加环境变量
+- - export PATH="/Applications/Google Chrome.app/Contents/MacOS:$PATH
+
+* 激活环境
+- - source ~/.zshrc
+
+* 打开浏览器，输入
+- - Google\ Chrome --remote-debugging-port=9222 --user-data-dir="~/ChromeProfile"
+
+* 运行node代码
+- - node demo.js
+
+
+### selenuim的参数使用
+
+- - usingServer设置服务器的配置
+
 

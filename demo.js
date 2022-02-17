@@ -5,26 +5,30 @@
 
 // Initialize Selenium Webdriver, which is the manager
 const {By,Key,Builder} = require("selenium-webdriver");
+const webdriver = require('selenium-webdriver')
 
 // Initialize chromedriver, which connects to Google Chrome browser app
 require("chromedriver");
 
 async function demo(){
 
-    // Initialize
+    // 初始化chromedriver
     let driver = await new Builder().forBrowser("chrome").build();
 
-    // Fetch
+    // 请求网站
     await driver.get("https://google.com");
             
-    // Search
+    // 根据页面元素搜索
     await driver.findElement(By.name("q")).sendKeys("杭州西湖",Key.RETURN);
  
-    // Output
+    // 请求结果
     var title = await driver.getTitle();
     console.log('Title is:',title);
 
-    // Done
+    // 新建新的tab
+    driver.executeScript('window.open("https://baidu.com");');
+
+    // 关闭浏览器
     await driver.quit();
  
 }
