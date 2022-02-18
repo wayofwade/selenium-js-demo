@@ -1,16 +1,15 @@
-#!/usr/bin/env node
 
-///
-// 打开浏览器，并在google上搜索杭州西湖
+/**
+ * 打开浏览器，并在google上搜索杭州西湖
+ */
 
-// Initialize Selenium Webdriver, which is the manager
 const {By,Key,Builder} = require("selenium-webdriver");
 const webdriver = require('selenium-webdriver')
 
 // Initialize chromedriver, which connects to Google Chrome browser app
 require("chromedriver");
 
-async function demo(){
+async function runDemo(){
 
     // 初始化chromedriver
     let driver = await new Builder().forBrowser("chrome").build();
@@ -33,4 +32,4 @@ async function demo(){
  
 }
 
-demo();
+runDemo();

@@ -1,22 +1,13 @@
-// 打开已经存在的浏览器
+/**
+ * 打开已经存在的浏览器
+ */
 
-// Initialize Selenium Webdriver, which is the manager
 const {By,Key,Builder} = require("selenium-webdriver");
 const webdriver = require('selenium-webdriver')
 var chrome = require("selenium-webdriver/chrome");
 require("chromedriver");
 
-async function demo(){
-
-    const capabilities = {
-        'device' : 'iPhone 11',
-        'realMobile' : 'true',
-        'os_version' : '14.0',
-        'browserName' : 'iPhone',
-        'name': 'BStack-[NodeJS] Sample Test', // test name
-        'build': 'BStack Build Number 1' // CI/CD job or build name
-       }
-
+async function runDemo(){
     // 初始化chromedriver
     const url = 'https://zhuanlan.zhihu.com/'
     let driver
@@ -55,4 +46,4 @@ async function demo(){
     driver.quit();
 }
 
-demo();
+runDemo();
