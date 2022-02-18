@@ -87,12 +87,13 @@ To update your Chrome webdriver:
 
 ### 如何控制打开已有浏览器
 * 添加环境变量
+- -  vim ./.bash_profile
 - - export PATH="/Applications/Google Chrome.app/Contents/MacOS:$PATH
 
 * 激活环境
-- - source ~/.zshrc
+- - source ./.bash_profile
 
-* 打开浏览器，输入
+* 打开命令行，输入
 - - Google\ Chrome --remote-debugging-port=9222 --user-data-dir="~/ChromeProfile"
 
 * 运行node代码

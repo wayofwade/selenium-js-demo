@@ -4,8 +4,6 @@
 const {By,Key,Builder} = require("selenium-webdriver");
 const webdriver = require('selenium-webdriver')
 var chrome = require("selenium-webdriver/chrome");
-
-// Initialize chromedriver, which connects to Google Chrome browser app
 require("chromedriver");
 
 async function demo(){
@@ -20,8 +18,7 @@ async function demo(){
        }
 
     // 初始化chromedriver
-    // let driver = await new Builder().forBrowser("chrome").build();
-
+    const url = 'https://zhuanlan.zhihu.com/'
     let driver
     var options = new chrome.Options();
     options.options_["debuggerAddress"] = "127.0.0.1:9222";
@@ -34,21 +31,28 @@ async function demo(){
     } catch(e) {
         console.log('-----新建浏览器报错', e)
     }
-     // set a cookie on the current domain
-     driver.manage().addCookie("test", "cookie-1");
+
+     // 请求网站
+     await driver.get(url);
+    // 设置cookie
+    driver.manage().addCookie({name: 'test-ccc', value: 'really good'});
     console.log('---driver---', driver)
 
-    // 请求网站
-    const url = 'https://zhuanlan.zhihu.com/'
+    // 请求网站携带cookie
     await driver.get(url);
     // 请求结果
-    var title = await driver.getTitle();
+    var title = await driver.getTitle()
     console.log('Title is:',title);
 
+    driver.manage().getCookie('test-ccc').then(function (cookie) {
+        console.log(cookie);
+     });
+     
+    console.log('----start:', new Date().getTime())
+    await driver.sleep(6000); //6second
+    console.log('----end:', new Date().getTime())
     // 关闭浏览器
-    setTimeout(() => {
-        await driver.quit();
-    }, 5000) 
+    driver.quit();
 }
 
 demo();
